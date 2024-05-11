@@ -20,7 +20,7 @@ class ControllerSend {
                     {amount:amountReceiver},
                     {where:{id:toAddress}}
                 )
-                if(amountSender!==1 || amountReceiver!==1){
+                if(!amountSender || !amountReceiver){
                     await PaymentAccount.update(
                         {amount:sender.amount},
                         {where:{id:req.user.id}}
@@ -52,9 +52,10 @@ class ControllerSend {
     }
     static async getAccountIncludeUser(req,res){
         try {
-            let data = await PaymentAccount.findAll({include:User})
+            let data = await PaymentAccount.findAll({include:PaymentHistory})
             res.status(200).json(data)
         } catch (error) {
+            console.log(error,'<< error get payment');
             res.status(500).json({message:'Internal Server Error'})
         }
     }

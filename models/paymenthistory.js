@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      PaymentHistory.belongsTo(models.User,{foreignKey:'SenderId'})
-      PaymentHistory.belongsTo(models.User,{foreignKey:'toAddress'})
+      PaymentHistory.belongsTo(models.PaymentAccount,{foreignKey:'SenderId'})
+      PaymentHistory.belongsTo(models.PaymentAccount,{foreignKey:'toAddress'})
     }
   }
   PaymentHistory.init({
