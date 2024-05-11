@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       PaymentHistory.belongsTo(models.User,{foreignKey:'SenderId'})
-      PaymentHistory.belongsTo(models.User,{foreignKey:'ReceiverId'})
+      PaymentHistory.belongsTo(models.User,{foreignKey:'toAddress'})
     }
   }
   PaymentHistory.init({
     name: DataTypes.STRING,
     amount: DataTypes.INTEGER,
     SenderId: DataTypes.INTEGER,
-    ReceiverId: DataTypes.INTEGER,
-    type: DataTypes.STRING
+    toAddress: DataTypes.INTEGER,
+    status: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'PaymentHistory',

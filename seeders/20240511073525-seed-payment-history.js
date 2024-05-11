@@ -17,8 +17,8 @@ module.exports = {
       name: 'Online Store Payment',
       amount: 20,
       SenderId: 1,
-      ReceiverId: 3,
-      type: 'send',
+      toAddress: 3,
+      status: 'send',
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -26,8 +26,8 @@ module.exports = {
       name: 'withdraw user',
       amount: 10,
       SenderId: 1,
-      ReceiverId: 1,
-      type: 'withdraw',
+      toAddress: 1,
+      status: 'withdraw',
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -35,8 +35,8 @@ module.exports = {
       name: 'transfer user',
       amount: 50,
       SenderId: 3,
-      ReceiverId: 3,
-      type: 'send',
+      toAddress: 3,
+      status: 'send',
       createdAt: new Date(),
       updatedAt: new Date()
     },

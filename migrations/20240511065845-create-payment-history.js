@@ -19,17 +19,17 @@ module.exports = {
         type: Sequelize.INTEGER,
         references:{
           key:'id',
-          model:'PaymentAccaunts'
+          model:'PaymentAccounts'
         }, onDelete:'cascade', onUpdate:'cascade'
       },
-      ReceiverId: {
+      toAddress: {
         type: Sequelize.INTEGER,
         references:{
           key:'id',
-          model:'PaymentAccaunts'
+          model:'PaymentAccounts'
         }, onDelete:'cascade', onUpdate:'cascade'
       },
-      type: {
+      status: {
         type: Sequelize.STRING
       },
       createdAt: {

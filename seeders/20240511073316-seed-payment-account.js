@@ -12,7 +12,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-   await queryInterface.bulkInsert('PaymentAccaunts', [
+   await queryInterface.bulkInsert('PaymentAccounts', [
     {
       UserId: 1,
       amount: 200,

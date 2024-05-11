@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       User.hasMany(models.PaymentHistory,{foreignKey:'SenderId'})
-      User.hasMany(models.PaymentHistory,{foreignKey:'ReceiverId'})
-      User.hasMany(models.PaymentAccaunt,{foreignKey:'UserId'})
+      User.hasMany(models.PaymentHistory,{foreignKey:'toAddress'})
+      User.hasMany(models.PaymentAccount,{foreignKey:'UserId'})
     }
   }
   User.init({
@@ -24,8 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'User',
   });
   User.beforeCreate( (user) => {
-    const hashedPassword = hashedPassword(user.password);
-    user.password = hashedPassword;
+    user.password = hashedPassword(user.password);
   });
   return User;
 };
