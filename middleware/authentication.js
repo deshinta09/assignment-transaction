@@ -5,7 +5,7 @@ async function authentication (req,res,next){
     try {
         let { authorization } = req.headers
         if(!authorization){
-            res.status(402).json({message:'Invalid Token'})
+            res.status(401).json({message:'Invalid Token'})
         }
 
         let checkToken = compareToken(authorization.split(' ')[1])
@@ -16,7 +16,7 @@ async function authentication (req,res,next){
         }
         next()
     } catch (error) {
-        res.status(402).json({message:'Invalid Token'})
+        res.status(401).json({message:'Invalid Token'})
     }
 }
 

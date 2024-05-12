@@ -10,8 +10,9 @@ class ControllerSend {
             if(!sender || !receiver){
                 res.status(500).json({message:'Internal Server Error'})
             } else {
-                let amountSender = sender.amount - amount
-                let amountReceiver = receiver.amount + amount
+                let amountSender = sender.amount - Number(amount)
+                let amountReceiver = receiver.amount + Number(amount)
+                console.log({amount,amountSender,amountReceiver});
                 amountSender = await PaymentAccount.update(
                     {amount:amountSender},
                     {where:{id:req.user.id}}
