@@ -12,7 +12,7 @@ class ControllerSend {
             } else {
                 let amountSender = sender.amount - Number(amount)
                 let amountReceiver = receiver.amount + Number(amount)
-                console.log({amount,amountSender,amountReceiver});
+                // console.log({amount,amountSender,amountReceiver});
                 amountSender = await PaymentAccount.update(
                     {amount:amountSender},
                     {where:{id:req.user.id}}
@@ -56,7 +56,7 @@ class ControllerSend {
             let data = await PaymentAccount.findAll({include:PaymentHistory})
             res.status(200).json(data)
         } catch (error) {
-            console.log(error,'<< error get payment');
+            // console.log(error,'<< error get payment');
             res.status(500).json({message:'Internal Server Error'})
         }
     }
