@@ -4,17 +4,25 @@
 - Install npm
 ## Getting Started
 Clone the repo: 
-```json
+```
 clone https://github.com/deshinta09/assignment-transaction.git
 cd assignment-transaction
 ```
+
 Install dependencies:
-```json
+```
 npm install
 ```
+
+Create Database With Postgres
+```
+npx sequelize db:create
+npx sequelize db:migrate
+npx sequelize db:seed:all
+```
+
 Start server:
-```json
-# Start server
+```
 node index.js
 ```
 
