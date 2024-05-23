@@ -23,7 +23,11 @@ npx sequelize db:seed:all
 
 Start server:
 ```
-node app.js
+node --watch app.js
+```
+OR
+```
+npx nodemon app.js
 ```
 
 Transaction API Documentation
