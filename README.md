@@ -23,7 +23,7 @@ npx sequelize db:seed:all
 
 Start server:
 ```
-node index.js
+node app.js
 ```
 
 Transaction API Documentation
